@@ -2,13 +2,14 @@ import heapq
 
 def min_cost_to_connect_cables(cable_lengths):
     heapq.heapify(cable_lengths)  # перетворюємо список у heap
-
+    print(cable_lengths)
     total_cost = 0
 
     while len(cable_lengths) > 1:
         # беремо два найменші кабелі
         cable1 = heapq.heappop(cable_lengths)
         cable2 = heapq.heappop(cable_lengths)
+        print(cable1, cable2)
 
         # обчислюємо вартість з'єднання і додаємо її до загальної вартості
         connection_cost = cable1 + cable2
